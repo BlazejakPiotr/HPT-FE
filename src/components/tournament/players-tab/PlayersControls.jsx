@@ -6,13 +6,7 @@ import {
   faUserPlus,
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
-
-// Add single player
-const AddPlayer = () => (
-  <button>
-    <FontAwesomeIcon icon={faUserPlus} />
-  </button>
-);
+import PlayersModal from "./PlayersSettings";
 
 // Buy-in players
 const BuyinPlayers = () => (
@@ -39,7 +33,7 @@ export const ImportPlayers = () => (
 
 const PlayersControls = () => (
   <div>
-    <SavePlayers /> <ImportPlayers /> <BuyinPlayers /> <AddPlayer />
+    <SavePlayers /> <ImportPlayers /> <BuyinPlayers /> <PlayersModal />{" "}
   </div>
 );
 

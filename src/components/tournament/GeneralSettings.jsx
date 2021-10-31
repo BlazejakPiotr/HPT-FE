@@ -7,7 +7,6 @@ import { useHistory } from "react-router";
 export const GeneralSettings = () => {
   const [show, setShow] = useState(false);
   const [tournament, setTournament] = useState({
-    format: "No re-buy, no add-on",
     currency: "USD",
   });
   const history = useHistory();
@@ -75,19 +74,6 @@ export const GeneralSettings = () => {
                   </Col>
                 </Form.Group>
 
-                <Form.Group as={Row} className="mb-3" controlId="password">
-                  <Form.Label column sm={3}>
-                    Password
-                  </Form.Label>
-                  <Col>
-                    <Form.Control
-                      type="password"
-                      placeholder="Password"
-                      value={tournament.password}
-                      onChange={(e) => handleInput(e, "password")}
-                    />
-                  </Col>
-                </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="date">
                   <Form.Label column sm={3}>
                     Date
@@ -114,21 +100,7 @@ export const GeneralSettings = () => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group as={Row} className="mb-3" controlId="format">
-                  <Form.Label column sm={3}>
-                    Format
-                  </Form.Label>
-                  <Col>
-                    <Form.Select
-                      value={tournament.format}
-                      onChange={(e) => handleInput(e, "format")}
-                    >
-                      <option value="1">No re-buy, no add-on</option>
-                      <option value="2">1 re-buy, no add-on</option>
-                      <option value="3">1 re-buy, 1 add-on</option>
-                    </Form.Select>
-                  </Col>
-                </Form.Group>
+
                 <Form.Group as={Row} className="mb-3" controlId="notes">
                   <Form.Label column sm={3}>
                     Notes

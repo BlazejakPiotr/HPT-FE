@@ -10,6 +10,7 @@ export const initialState = {
     list: [],
     isLoading: false,
     isError: false,
+    current: {},
   },
 };
 
