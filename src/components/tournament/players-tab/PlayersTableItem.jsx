@@ -14,13 +14,20 @@ const PlayersTableItem = ({ data, index }) => {
 
   const tournament = useSelector((state) => state.tournaments.current);
 
-  const handleBuyin = (data) => {
+  const handleBuyin = () => {
     tournament.players[index] = {
       ...data,
       ...player,
       status: "Still in",
       buyin: true,
       cost: tournament.buyin,
+    };
+  };
+
+  const handleBustout = () => {
+    tournament.players[index] = {
+      status: "Busted out",
+      placement: tournament.players.length,
     };
   };
 
@@ -79,7 +86,8 @@ const PlayersTableItem = ({ data, index }) => {
               </Form>
             </Col>
             <Col>
-              <Button onClick={() => handleBuyin(data)}>Buy in</Button>
+              <Button onClick={() => handleBuyin()}>Buy in</Button>
+              <Button onClick={() => handleBustout()}>Bust out</Button>
               <div>Status</div>
               {data.status === "Not bought in" && (
                 <Badge pill bg="warning" text="dark">
